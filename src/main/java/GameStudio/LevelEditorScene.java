@@ -8,6 +8,8 @@ import org.joml.Vector4f;
 import util.AssetPool;
 
 public class LevelEditorScene extends Scene {
+    private GameObject obj1;
+    private Spritesheet sprites;
 
     public LevelEditorScene() {
 
@@ -19,14 +21,18 @@ public class LevelEditorScene extends Scene {
 
         this.camera = new Camera(new Vector2f(-250, 0));
 
-        Spritesheet sprites = AssetPool.getSpritesheet("assets/images/spritesheet.png");
+        sprites = AssetPool.getSpritesheet("assets/images/spritesheet.png");
 
-        GameObject obj1 = new GameObject("Object 1",new Transform(new Vector2f(100,100),new Vector2f(256,256)));
-        obj1.addComponent(new SpriteRenderer(sprites.getSprite(0)));
+        obj1 = new GameObject("Object 1",new Transform(new Vector2f(100,100),new Vector2f(256,256)),2);
+        obj1.addComponent(new SpriteRenderer(new Sprite(
+                AssetPool.getTexture("assets/images/blendImage1.png")
+        )));
         this.addGameObjectToScene(obj1);
 
-        GameObject obj2 = new GameObject("Object 2",new Transform(new Vector2f(400,100),new Vector2f(256,256)));
-        obj2.addComponent(new SpriteRenderer(sprites.getSprite(10)));
+        GameObject obj2 = new GameObject("Object 2",new Transform(new Vector2f(200,100),new Vector2f(256,256)),-1);
+        obj2.addComponent(new SpriteRenderer( new Sprite(
+                AssetPool.getTexture("assets/images/blendImage2.png")
+        )));
         this.addGameObjectToScene(obj2);
 
         }
@@ -38,9 +44,12 @@ public class LevelEditorScene extends Scene {
 
     }
 
+
     @Override
     public void update(float dt) {
-        System.out.println("FPS: " + (1.0f / dt));
+
+
+//        obj1.transform.position.x += 10*dt;
         for(GameObject go: this.gameObjects){
             go.update(dt);
         }

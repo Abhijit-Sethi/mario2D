@@ -14,8 +14,10 @@ import static org.lwjgl.system.MemoryUtil.NULL;
 // This is a Singleton class, as we only need
 // 1 window instance running at once.
 public class Window {
-    private final int width,height;
+    private int width;
+    private int height;
     private long glfwWindow; // Returned by glfw, when window is created
+    private ImGuiLayer imguiLayer;
     private final String title;
     private static Window window = null;
     public float r,g,b,a;
@@ -114,6 +116,12 @@ public class Window {
         // ------ KEY CALLBACKS ------
         glfwSetKeyCallback(glfwWindow,KeyListener::keyCallback);
 
+        // Window size callback
+        glfwSetWindowSizeCallback(glfwWindow,(w,newWidth,newHeight)->{
+            Window.setWidth(newWidth);
+            Window.setHeight(newHeight);
+        });
+
         // Make OpenGL context current
         glfwMakeContextCurrent(glfwWindow);
 
@@ -130,6 +138,10 @@ public class Window {
         // bindings available for use.
         GL.createCapabilities();
 
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
+        this.imguiLayer = new ImGuiLayer(glfwWindow);
+        this.imguiLayer.initImGui();
         Window.changeScene(0);
     }
 
@@ -148,6 +160,7 @@ public class Window {
             if (dt >= 0) {
                 currentScene.update(dt);
             }
+            this.imguiLayer.update(dt);
             glfwSwapBuffers(glfwWindow);
 
             endTime = (float)glfwGetTime();
@@ -156,4 +169,17 @@ public class Window {
         }
 
     }
+    public static int getWidth(){
+        return get().width;
+    }
+    public static int getHeight(){
+        return get().height;
+    }
+    public static void setWidth(int newWidth){
+        get().width = newWidth;
+    }
+    public static void setHeight(int newHeight){
+        get().height = newHeight;
+    }
+
 }

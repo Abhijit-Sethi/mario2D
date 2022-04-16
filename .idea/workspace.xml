@@ -4,20 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8690cd73-85e2-4a1e-92cc-3c0e9684d805" name="Changes" comment="Components and GameObjects added (4.05)">
-      <change afterPath="$PROJECT_DIR$/Assets/images/testImage2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/Sprite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/Spritesheet.java" afterDir="false" />
+    <list default="true" id="8690cd73-85e2-4a1e-92cc-3c0e9684d805" name="Changes" comment="Added texture batching (6.01)">
+      <change afterPath="$PROJECT_DIR$/Assets/images/blendImage1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/images/blendImage2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/imgui-app-1.86.4-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/imgui-app-1.86.4-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/imgui-app-1.86.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/imgui-binding-1.86.4-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/imgui-binding-1.86.4-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/imgui-binding-1.86.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/imgui-java64.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/imgui-lwjgl3-1.86.4-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/imgui-lwjgl3-1.86.4-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/imgui-lwjgl3-1.86.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GameStudio/ImGuiLayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/shaders/default.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/assets/shaders/default.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameStudio/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameStudio/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameStudio/LevelEditorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameStudio/LevelEditorScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameStudio/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameStudio/Transform.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameStudio/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameStudio/Window.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/components/SpriteRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/SpriteRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/renderer/RenderBatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/renderer/RenderBatch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/renderer/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/renderer/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/renderer/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/renderer/Texture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/AssetPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/AssetPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/Time.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +37,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="mario2D" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -83,11 +109,15 @@
       <recent name="C:\Users\sethi\OneDrive\Documents\OOAD\mario2D\assets\images" />
       <recent name="C:\Users\sethi\OneDrive\Documents\OOAD\mario2D\Assets\images" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sethi\OneDrive\Documents\OOAD\mario2D\assets\images" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="mario2D.main" />
+      <option name="PROGRAM_PARAMETERS" value="java.library.path=libs" />
       <option name="VM_PARAMETERS" value="-ea" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -164,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650027187109</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added texture batching (6.01)">
+      <created>1650109495725</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1650109495725</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,6 +221,7 @@
     <MESSAGE value="Minor change" />
     <MESSAGE value="Scene Manager added" />
     <MESSAGE value="Textures added (3.30)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Textures added (3.30)" />
+    <MESSAGE value="Added texture batching (6.01)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added texture batching (6.01)" />
   </component>
 </project>
