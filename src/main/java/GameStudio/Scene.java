@@ -79,7 +79,7 @@ public abstract class Scene {
 
     }
 
-    public void laod() {
+    public void load() {
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .registerTypeAdapter(Component.class, new ComponentDeserializer())
