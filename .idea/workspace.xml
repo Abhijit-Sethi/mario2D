@@ -5,28 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8690cd73-85e2-4a1e-92cc-3c0e9684d805" name="Changes" comment="Added texture batching (6.01)">
-      <change afterPath="$PROJECT_DIR$/Assets/images/blendImage1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/images/blendImage2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/imgui-app-1.86.4-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/imgui-app-1.86.4-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/imgui-app-1.86.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/imgui-binding-1.86.4-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/imgui-binding-1.86.4-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/imgui-binding-1.86.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/imgui-java64.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/imgui-lwjgl3-1.86.4-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/imgui-lwjgl3-1.86.4-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/imgui-lwjgl3-1.86.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GameStudio/ImGuiLayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgui.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GameStudio/ComponentDeserializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GameStudio/GameObjectDeserializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/default.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/default.glsl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameStudio/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameStudio/Component.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameStudio/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameStudio/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameStudio/ImGuiLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameStudio/ImGuiLayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameStudio/LevelEditorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameStudio/LevelEditorScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameStudio/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameStudio/Transform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameStudio/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameStudio/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GameStudio/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameStudio/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/Sprite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/components/SpriteRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/SpriteRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/renderer/RenderBatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/renderer/RenderBatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/renderer/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/renderer/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/Spritesheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/Spritesheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/renderer/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/renderer/Texture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/AssetPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/AssetPool.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -149,6 +149,8 @@ public class Window {
         float beginTime = (float)glfwGetTime();
         float endTime;
         float dt = -1.0f;
+
+        currentScene.laod();
         while(!glfwWindowShouldClose(glfwWindow))
         {
             // Poll events
@@ -160,13 +162,15 @@ public class Window {
             if (dt >= 0) {
                 currentScene.update(dt);
             }
-            this.imguiLayer.update(dt);
+            this.imguiLayer.update(dt, currentScene);
             glfwSwapBuffers(glfwWindow);
 
             endTime = (float)glfwGetTime();
             dt = endTime - beginTime;
             beginTime = (float)glfwGetTime();
         }
+
+        currentScene.saveExit();
 
     }
     public static int getWidth(){
