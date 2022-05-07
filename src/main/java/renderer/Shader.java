@@ -3,6 +3,7 @@ package renderer;
 import org.joml.*;
 import org.lwjgl.BufferUtils;
 
+import javax.print.DocFlavor;
 import java.io.IOException;
 import java.nio.FloatBuffer;
 import java.nio.file.Files;
@@ -11,7 +12,9 @@ import java.nio.file.Paths;
 import static org.lwjgl.opengl.GL11.GL_FALSE;
 import static org.lwjgl.opengl.GL20.*;
 import static org.lwjgl.opengl.GL20.glGetShaderInfoLog;
+
 public class Shader {
+
     private int shaderProgramID;
     private boolean beingUsed = false;
 
@@ -120,6 +123,7 @@ public class Shader {
         glUseProgram(0);
         beingUsed = false;
     }
+
     public void uploadMat4f(String varName, Matrix4f mat4) {
         int varLocation = glGetUniformLocation(shaderProgramID, varName);
         use();

@@ -10,23 +10,23 @@ uniform mat4 uView;
 
 out vec4 fColor;
 out vec2 fTexCoords;
-out float fTexID;
+out float fTexId;
 
 void main()
 {
     fColor = aColor;
     fTexCoords = aTexCoords;
-    fTexID = aTexId;
+    fTexId = aTexId;
+
     gl_Position = uProjection * uView * vec4(aPos, 1.0);
 }
 
 #type fragment
 #version 330 core
 
-
 in vec4 fColor;
 in vec2 fTexCoords;
-in float fTexID;
+in float fTexId;
 
 uniform sampler2D uTextures[8];
 
@@ -34,13 +34,11 @@ out vec4 color;
 
 void main()
 {
-    if(fTexID > 0){
-        int id = int(fTexID);
-        color = fColor*texture(uTextures[id],fTexCoords);
-//        color = vec4(fTexCoords,0,1);
-    }
-    else{
+    if (fTexId > 0) {
+        int id = int(fTexId);
+        color = fColor * texture(uTextures[id], fTexCoords);
+        //color = vec4(fTexCoords, 0, 1);
+    } else {
         color = fColor;
     }
 }
-

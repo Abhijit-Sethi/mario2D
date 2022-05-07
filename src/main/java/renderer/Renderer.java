@@ -1,8 +1,7 @@
 package renderer;
 
-import GameStudio.GameObject;
 import components.SpriteRenderer;
-import org.w3c.dom.Text;
+import jade.GameObject;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -28,7 +27,7 @@ public class Renderer {
     private void add(SpriteRenderer sprite) {
         boolean added = false;
         for (RenderBatch batch : batches) {
-            if (batch.hasRoom() && batch.zIndex() == sprite.gameObject.zIndex()) {
+            if (batch.hasRoom() && batch.zIndex() == sprite.gameObject.transform.zIndex) {
                 Texture tex = sprite.getTexture();
                 if (tex == null || (batch.hasTexture(tex) || batch.hasTextureRoom())) {
                     batch.addSprite(sprite);
@@ -37,8 +36,10 @@ public class Renderer {
                 }
             }
         }
+
         if (!added) {
-            RenderBatch newBatch = new RenderBatch(MAX_BATCH_SIZE,sprite.gameObject.zIndex());
+            RenderBatch newBatch = new RenderBatch(MAX_BATCH_SIZE,
+                    sprite.gameObject.transform.zIndex, this);
             newBatch.start();
             batches.add(newBatch);
             newBatch.addSprite(sprite);
@@ -46,14 +47,28 @@ public class Renderer {
         }
     }
 
-
-        public void render () {
-            for (RenderBatch batch : batches) {
-                batch.render();
+    public void destroyGameObject(GameObject go) {
+        if (go.getComponent(SpriteRenderer.class) == null) return;
+        for (RenderBatch batch : batches) {
+            if (batch.destroyIfExists(go)) {
+                return;
             }
         }
-
     }
 
+    public static void bindShader(Shader shader) {
+        currentShader = shader;
+    }
 
+    public static Shader getBoundShader() {
+        return currentShader;
+    }
 
+    public void render() {
+        currentShader.use();
+        for (int i = 0; i < batches.size(); i++) {
+            RenderBatch batch = batches.get(i);
+            batch.render();
+        }
+    }
+}
